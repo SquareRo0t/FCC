@@ -1,0 +1,18 @@
+#** start of main.py **
+
+def number_pattern(n):
+    if not isinstance(n, int):
+        return 'Argument must be an integer value.'
+    
+    elif n < 1:
+        return 'Argument must be an integer greater than 0.'
+
+    order = []
+    for nmp in range(1, n + 1):
+        order.append(nmp)
+    return " ".join(str(x) for x in order)
+
+print(number_pattern(4))
+
+#** end of main.py **
+
