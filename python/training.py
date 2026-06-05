@@ -74,21 +74,21 @@
 # print(antal_vokaler("människa"))
 
 
-# Bygg ett enkelt gissningsspel – datorn väljer ett tal 1–10, användaren gissar tills de har rätt
-import random
-dator_slump = random.randint(1, 10)
+# # Bygg ett enkelt gissningsspel – datorn väljer ett tal 1–10, användaren gissar tills de har rätt
+# import random
+# dator_slump = random.randint(1, 10)
 
-while True:
-    x = input("Gissa på en siffra mellan 1-10: ")
+# while True:
+#     x = input("Gissa på en siffra mellan 1-10: ")
     
-    gissning = int(x)
-    print(f"Du gissde på {gissning}")
+#     gissning = int(x)
+#     print(f"Du gissde på {gissning}")
 
-    if gissning == dator_slump:
-        print("Grattis du gissade rätt nummer")
-        break
-    elif gissning > dator_slump:
-        print("Du gissade för högt! Försök igen.")
-    else:
-        print("Du gissade för låg! Försök igen.")
+#     if gissning == dator_slump:
+#         print("Grattis du gissade rätt nummer")
+#         break
+#     elif gissning > dator_slump:
+#         print("Du gissade för högt! Försök igen.")
+#     else:
+#         print("Du gissade för låg! Försök igen.")
 
