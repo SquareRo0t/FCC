@@ -237,35 +237,161 @@
 #         print("Invalid guess")
 #         print(f"Please select a number between {lowest_num} and {highest_num}")
 
+# ---------------------------------------------------------
+# import random
 
-import random
+# options = ("rock", "paper", "scissors")
+# running = True
 
-options = ("rock", "paper", "scissors")
-running = True
+# while running:
 
-while running:
+#     player = None
+#     computer = random.choice(options)
 
-    player = None
-    computer = random.choice(options)
+#     while player not in options:
+#         player = input("Enter a choice (rock, paper, scissors): ")
 
-    while player not in options:
-        player = input("Enter a choice (rock, paper, scissors): ")
+#     print(f"Player: {player}")
+#     print(f"Computer: {computer}")
 
-    print(f"Player: {player}")
-    print(f"Computer: {computer}")
+#     if player == computer:
+#         print("It's a tie!")
+#     elif player == "rock" and computer == "scissors":
+#         print("You win!")
+#     elif player == "paper" and computer == "rock":
+#         print("You win!")
+#     elif player == "scissors" and computer == "paper":
+#         print("You win!")
+#     else:
+#         print("You lose!")
 
-    if player == computer:
-        print("It's a tie!")
-    elif player == "rock" and computer == "scissors":
-        print("You win!")
-    elif player == "paper" and computer == "rock":
-        print("You win!")
-    elif player == "scissors" and computer == "paper":
-        print("You win!")
-    else:
-        print("You lose!")
+#     if not input("Play again? (y/n): ").lower() == "y":
+#         running = False
 
-    if not input("Play again? (y/n): ").lower() == "y":
-        running = False
+# print("Thanks for playing!")
+# ---------------------------------------------------------
 
-print("Thanks for playing!")
+# import random
+
+# ● ┌ ─ ┐ │ └ ┘
+
+# "┌─────────┐"
+# "│         │"
+# "│         │"
+# "│         │"
+# "└─────────┘"
+
+# dice_art = {
+#     1: ("┌─────────┐",
+#         "│         │",
+#         "│    ●    │",
+#         "│         │",
+#         "└─────────┘"),
+
+#     2: ("┌─────────┐",
+#         "│  ●      │",
+#         "│         │",
+#         "│      ●  │",
+#         "└─────────┘"),
+    
+#     3: ("┌─────────┐",
+#         "│  ●      │",
+#         "│    ●    │",
+#         "│      ●  │",
+#         "└─────────┘"),
+
+#     4: ("┌─────────┐",
+#         "│ ●     ● │",
+#         "│         │",
+#         "│ ●     ● │",
+#         "└─────────┘"),
+    
+#     5: ("┌─────────┐",
+#         "│ ●     ● │",
+#         "│    ●    │",
+#         "│ ●     ● │",
+#         "└─────────┘"),
+    
+#     6: ("┌─────────┐",
+#         "│  ●   ●  │",
+#         "│  ●   ●  │",
+#         "│  ●   ●  │",
+#         "└─────────┘")
+# }
+
+# dice = []
+# total = 0
+# num_of_dice = int(input("How many dice? "))
+
+# for die in range(num_of_dice):
+#     dice.append(random.randint(1, 6))
+
+# for die in range(num_of_dice):
+#     for line in dice_art.get(dice[die]):
+#         print(line)
+
+# for line in range(5):
+#     for die in dice:
+#         print(dice_art.get(die)[line], end=" ")
+#     print()
+
+# for die in dice:
+#     total += die
+# print(f"Total: {total}")
+# ---------------------------------------------------------
+
+# def display_invoice(username, amount, due_data):
+#     print(f"Hello {username}")
+#     print(f"Your bill of €{amount:.2f} is due {due_data}")
+
+# display_invoice("Chicken", 40, "02/03")
+
+# def net_price(list_price, discount=0, tax=0.05):
+#     return list_price * (1 - discount) * (1 + tax)
+
+
+# import time
+
+# def count(end, start=0):
+#     for x in range(start, end+1):
+#         print(x)
+#         time.sleep(1)
+#     print("Done!")
+
+# count(30, 15)
+
+# def get_phone(country, area, first, last):
+#     return f"{country}-{area}-{first}-{last}"
+
+# phone_num = get_phone(country=46, area=123, first=456, last=789)
+# print(phone_num)
+
+# def add(*args):
+#     total = 0
+#     for arg in args:
+#         total += arg
+#     return total
+
+# def display_name(*args):
+#     for arg in args:
+#         print(arg, end=" ")
+
+# def print_adress(**kwargs):
+#     for key, value in kwargs.items():
+#         print(f"{key}: {value}")
+
+# print_adress(street="123 hahga", apt="1", city= "älv" , state= "ÄL", zip="123456")
+
+# def shipping_label(*args, **kwargs):
+#     for arg in args:
+#         print(arg, end=" ")
+#     print()
+
+#     if "apt" in kwargs:
+#         print(f"{kwargs.get('street')} {kwargs.get('apt')}")
+#     else:
+#          print(f"{kwargs.get('street')}")
+#     print(f"{kwargs.get('city')} {kwargs.get('zip')}")
+
+# shipping_label("Mr", "Sherlock", "Holmes", "Legend",
+#                street="123 brit", apt="2", city="Lond", zip="2344" )
