@@ -17,7 +17,7 @@ elif distance_mi <= 1:
     else:
         print(False)
 
-elif distance_mi > 1 and distance_mi <=6:
+elif distance_mi > 1 and distance_mi <= 6:
     if has_bike and not is_raining:
         print(True)
     else:

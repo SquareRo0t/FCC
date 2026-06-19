@@ -10,5 +10,6 @@ def apply_discount(price, discount):
     else:
         return price * (1 - discount / 100)
 
-total = apply_discount(100,20)
+
+total = apply_discount(100, 20)
 print(total)

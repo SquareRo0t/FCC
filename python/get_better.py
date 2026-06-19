@@ -1,3 +1,5 @@
+# ---------------------------------------------------------
+
 # principle = 0
 # rate = 0
 # time = 0
@@ -21,6 +23,7 @@
 
 # print(f"Balance after {time} year/s €{total:.2f}")
 
+# ---------------------------------------------------------
 
 # timer
 # import time
@@ -36,6 +39,7 @@
 
 # print("Time's up!")
 
+# ---------------------------------------------------------
 
 # Shopping cart program
 # foods = []
@@ -62,6 +66,7 @@
 # print()
 # print(f"You total is: ${total}")
 
+# ---------------------------------------------------------
 
 # fruits = ["apple", "orange", "banana", "coconut"]
 # vegetables = ["celery", "carrots", "potatoes"]
@@ -87,21 +92,22 @@
 #         print(num, end=" ")
 #     print()
 
+# ---------------------------------------------------------
 
 # Quiz game
-# questions = (("1"), 
-#              ("2"), 
-#              ("3"), 
-#              ("4"), 
-#              ("5"))
+# questions = (("Fråga 1"),
+#              ("Fråga 2"),
+#              ("Fråga 3"),
+#              ("Fråga 4"),
+#              ("Fråga 5"))
 
-# options = (("1", "2", "3", "4", "5"), 
-#            ("2", "2", "3", "4", "5"), 
-#            ("3", "2", "3", "4", "5"), 
-#            ("4", "2", "3", "4", "5"), 
-#            ("5", "2", "3", "4", "5"))
+# options = (("a", "b", "c", "d"),
+#            ("1", "1", "2", "3"),
+#            ("2", "1", "2", "3"),
+#            ("3", "1", "2", "3"),
+#            ("4", "1", "2", "3"))
 
-# answers = ("1", "2", "3", "4", "5")
+# answers = ("a", "1", "2", "3", "4")
 # guesses = []
 # score = 0
 # question_num = 0
@@ -112,7 +118,7 @@
 #     for option in options[question_num]:
 #         print(option)
 
-#     guess = input("Enter (1, 2, 3, 4, 5) ").upper()
+#     guess = input("Enter (1, 2, 3, 4) ").upper()
 #     guesses.append(guess)
 #     if guess == answers[question_num]:
 #         score += 1
@@ -124,8 +130,8 @@
 #     question_num += 1
 
 # print("--------------------------")
-# print("         Result           ")    
-# print("--------------------------")    
+# print("         Result           ")
+# print("--------------------------")
 
 # print("answers:", end=" ")
 # for answer in answers:
@@ -139,3 +145,127 @@
 
 # score = int(score / len(questions) * 100)
 # print(f"Your score is: {score}%")
+
+# ---------------------------------------------------------
+
+# capitals = {
+#     "USA": "Washington D.C.",
+#     "India": "New Delhi",
+#     "China": "Beijing",
+#     "Russia": "Moscow",
+# }
+
+# print(capitals.get("USA"))
+
+# if capitals.get("Japan"):
+#     print("That capital exist")
+# else:
+#     print()
+
+# capitals.update({"Germany": "Berlin"})
+# print(capitals)
+
+# ---------------------------------------------------------
+
+# Concession stand program
+# menu = {
+#     "pizza": 3.00,
+#     "nachos": 4.50,
+#     "popcorn": 6.00,
+#     "fries": 2.50,
+#     "chips": 1.00,
+#     "pretzel": 3.50,
+#     "soda": 3.00,
+#     "lemonade": 4.25,
+# }
+
+# cart = []
+# total = 0
+
+# print("-------------MENY--------------")
+# for key, value in menu.items():
+#     print(f"{key:10}: €{value:.2f}")
+# print("-------------------------------")
+
+# while True:
+#     food = input("Select an item (q to quit): ").lower()
+#     if food == "q":
+#         break
+#     elif menu.get(food) is not None:
+#         cart.append(food)
+
+# for food in cart:
+#     total += menu.get(food)
+#     print(food, end=" ")
+
+# print()
+# print(f"Total is: €{total:2f}")
+
+# ---------------------------------------------------------
+
+# Python number guessing game
+# import random
+
+# lowest_num = 1
+# highest_num = 100
+# answer = random.randint(lowest_num, highest_num)
+# guesses = 0
+# is_running = True
+
+# print("Python Number Guessing Game")
+# print(f"Select a number between {lowest_num} and {highest_num}")
+
+# while is_running:
+#     guess = input("Enter you guess: ")
+
+#     if guess.isdigit():
+#         guess = int(guess)
+#         guesses += 1
+
+#         if guess < lowest_num or guess > highest_num:
+#             print("That number is out of range")
+#             print(f"Select a number between {lowest_num} and {highest_num}")
+#         elif guess < answer:
+#             print("Too low! Try again!")
+#         elif guess > answer:
+#             print("Too high! Try again!")
+#         else:
+#             print(f"Correct! The answer was {answer}")
+#             print(f"Number of guesses: {guesses}")
+#             is_running = False
+#     else:
+#         print("Invalid guess")
+#         print(f"Please select a number between {lowest_num} and {highest_num}")
+
+
+import random
+
+options = ("rock", "paper", "scissors")
+running = True
+
+while running:
+
+    player = None
+    computer = random.choice(options)
+
+    while player not in options:
+        player = input("Enter a choice (rock, paper, scissors): ")
+
+    print(f"Player: {player}")
+    print(f"Computer: {computer}")
+
+    if player == computer:
+        print("It's a tie!")
+    elif player == "rock" and computer == "scissors":
+        print("You win!")
+    elif player == "paper" and computer == "rock":
+        print("You win!")
+    elif player == "scissors" and computer == "paper":
+        print("You win!")
+    else:
+        print("You lose!")
+
+    if not input("Play again? (y/n): ").lower() == "y":
+        running = False
+
+print("Thanks for playing!")
