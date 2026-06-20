@@ -152,7 +152,7 @@
 #     "USA": "Washington D.C.",
 #     "India": "New Delhi",
 #     "China": "Beijing",
-#     "Russia": "Moscow",
+#     "Russia": "Moscow"
 # }
 
 # print(capitals.get("USA"))
@@ -176,7 +176,7 @@
 #     "chips": 1.00,
 #     "pretzel": 3.50,
 #     "soda": 3.00,
-#     "lemonade": 4.25,
+#     "lemonade": 4.25
 # }
 
 # cart = []
@@ -395,3 +395,138 @@
 
 # shipping_label("Mr", "Sherlock", "Holmes", "Legend",
 #                street="123 brit", apt="2", city="Lond", zip="2344" )
+# ---------------------------------------------------------
+
+# Iterable
+
+# numbers = [1, 2, 3, 4, 5]
+
+# numbers = (1, 2, 3, 4, 5)
+
+# for number in numbers:
+#     print(number)
+
+# fruits = {"apple", "orange", "banana", "coconut"}
+
+# for fruit in fruits:
+#     print(fruit)
+
+# name = "Square Root"
+
+# for character in name:
+#     print(character, end=" ")
+
+# my_dictionary = {"A": 1, "B": 2, "C": 3 }
+# for key, value in my_dictionary.items():
+#     print(f"{key} = {value}")
+
+# ---------------------------------------------------------
+
+# word = "APPLE"
+
+# letter = input("Guess a letter in the secret word: ").upper()
+
+# if letter not in word:
+#     print(f"{letter} was not found")
+# else:
+#     print(f"There's a {letter}")
+
+# students = {"Spongbob", "Patrick", "Sandy"}
+
+# student = input("Enter the name of a student: ")
+# if student in students:
+#     print(f"{student} is a student")
+# else:
+#     print(f"{student} was not found")
+
+# grades = {"Sandy": "A", "Squidward": "B", "Spongebob": "C", "Patrick": "D"}
+
+# student = input("Enter a name of a student: ")
+
+# if student in grades:
+#     print(f"{student}'s grade is {grades[student]}")
+# else:
+#     print(f"{student} was not found")
+
+# email = "acb123@gmail.com"
+
+# if "@" in email and "." in email:
+#     print("Valid eamil")
+# else:
+#     print("Invalid email")
+
+# ---------------------------------------------------------
+
+# List comprehension
+
+# doubles = []
+# for x in range(1, 11):
+#     doubles.append(x * 2)
+# print(doubles)
+
+# doubles = [x * 2 for x in range(1, 11)]
+# triples = [y * 3 for y in range(1, 11)]
+# squares = [z * z for z in range(1, 11)]
+
+# print(squares)
+
+# fruits = ["apple", "orange", "banana", "coconut"]
+# fruits_chars = [fruit[0] for fruit in fruits]
+
+# print(fruits_chars)
+
+# numbers = [1, -2, 3, -4, 5, -6, 8, -7]
+# positive_nums = [num for num in numbers if num >= 0]
+# negative_nums = [num for num in numbers if num < 0]
+# even_numbers = [num for num in numbers if num % 2 == 0]
+# odd_numbers = [num for num in numbers if num % 2 == 1]
+
+# print(odd_numbers)
+
+# grades = [85, 42, 79, 90, 56, 61, 30]
+# passing_grades = [grade for grade in grades if grade >= 60]
+
+# print(passing_grades)
+
+# ---------------------------------------------------------
+
+# Match-case statement
+# def day_of_week(day):
+#     match day:
+#         case 1:
+#             return "It is Sunday"
+#         case 2:
+#             return "It is Monday"
+#         case 3:
+#             return "It is Tuesday"
+#         case 4:
+#             return "It is Wednesday"
+#         case 5:
+#             return "It is Thursday"
+#         case 6:
+#             return "It is Friday"
+#         case 7:
+#             return "It is Saturday"
+#         case _:
+#             return "Not a valid day"
+        
+# print(day_of_week())
+
+# | = or
+# def is_weekend(day):
+#     match day:
+#         case "Saturday" | "Sunday":
+#             return True
+#         case "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday":
+#             return False
+#         case _:
+#             return False
+        
+# print(is_weekend())
+        
+# ---------------------------------------------------------
+
+# module
+
+        
+        
