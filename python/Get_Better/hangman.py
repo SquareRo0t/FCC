@@ -2,7 +2,7 @@
 
 import random
 
-from wordslist_hangman import words
+from python.Get_Better.wordslist_hangman import words
 
 # Dictionary of key:()
 hangman_art = {0:("   ",

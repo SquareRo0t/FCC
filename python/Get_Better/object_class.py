@@ -11,7 +11,7 @@
 #         self.color = color
 #         self.for_sale = for_sale
 
-from car import Car
+from python.Get_Better.car import Car
 
 car1 = Car("Mustang", 2026, "blue", False)
 car2 = Car("BWM", 2025, "SILVER", True)
