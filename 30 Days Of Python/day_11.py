@@ -1,295 +1,278 @@
-#  Exercises: Day 10
+# Exercises: Day 11
+# 1 Declare a function add_two_numbers. It takes two parameters and it returns a sum.
+def add_two_numbers(num1, num2):
+    sum = num1 + num2
+    return sum
+print(add_two_numbers(1, 2))
 
-# Exercises: Level 1
-# 1 Iterate 0 to 10 using for loop, do the same using while loop.
-for num in range(11):
-    print(num)
-print("--------------")
-start = 0
-while start < 11:
-    print(start)
-    start += 1
-print("--------------")
+# 2 Area of a circle is calculated as follows: area = π x r x r. Write a function that calculates area_of_circle.
+def area_of_circle(radius1, radius2):
+    pi = 3.14
+    area = pi * radius1 * radius2
+    return area
+print(area_of_circle(2, 4))
 
-# 2 Iterate 10 to 0 using for loop, do the same using while loop.
-for num2 in range(10, -1, -1):
-    print(num2)
-print("--------------")
-start2 = 10
-while start2 > -1:
-    print("While loop", start2)
-    start2 -= 1
-print("--------------")
+# 3 Write a function called add_all_nums which takes arbitrary number of arguments and sums all the arguments. Check if all the list items are number types. If not do give a reasonable feedback.
+def add_all_nums(*args):
+    total = 0
+    for i in args:
+        if isinstance(i, (int, float)):
+            total += i
+        else:
+            return "All arguments must be numbers"
+    return total
+print(add_all_nums(1, 2))
 
-# 3 Write a loop that makes seven calls to print(), so we get on the output the following triangle:
-for i in range(1, 8):
-    print("#" * i)
-print("--------------")
+# 4 Temperature in °C can be converted to °F using this formula: °F = (°C x 9/5) + 32. Write a function which converts °C to °F, convert_celsius_to_fahrenheit.
+def convert_celsius_to_fahrenheit(C):
+    F = C * (9/5) + 32
+    return F
+print(convert_celsius_to_fahrenheit(10))
 
-# 4 Use nested loops to create the following:
-for ii in range(8):
-    for jj in range(8):
-        print("# ", end="")
-    print()
-print("--------------")
-
-# 5 Print the following pattern:
-for iii in range(11):
-    print(f"{iii} * {iii} = {iii * iii}")
-print("--------------")
-
-# 6 Iterate through the list, ['Python', 'Numpy','Pandas','Django', 'Flask'] using a for loop and print out the items.
-prog_list = ["Python", "Numpy", "Pandas", "Django", "Flask"]
-for prog in prog_list:
-    print(prog)
-print("--------------")
-
-# 7 Use for loop to iterate from 0 to 100 and print only even numbers
-for even in range(0, 101):
-    if even % 2 == 0:
-        print(even)
-print("--------------")
-
-# 8 Use for loop to iterate from 0 to 100 and print only odd numbers
-for odd in range(0, 101):
-    if odd % 2 != 0:
-        print(odd)
-print("--------------")
-
-# Exercises: Level 2
-# 1 Use for loop to iterate from 0 to 100 and print the sum of all numbers.
-total = 0
-for sum in range(0, 101):
-    total = sum + total
-# Utanför för att få totala annars blir det rad för rad
-print(f"The sum of all numbers is {total}")
-print("--------------")
-
-# 2 Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
-tota_even = 0
-total_odd = 0
-for tot in range(0, 101):
-    if tot % 2 == 0:
-        tota_even = tota_even + tot
+# 5 Write a function called check-season, it takes a month parameter and returns the season: Autumn, Winter, Spring or Summer.
+def check_season(month):
+    month = month.lower()
+    if month in ["december", "january", "february"]:
+        return "winter"
+    elif month in ["march", "april", "may"]:
+        return "Spring"
+    elif month in ["june", "july", "august"]:
+        return "Summer"
+    elif month in ["september", "october", "november"]:
+        return "Autumn"
     else:
-        total_odd = total_odd + tot
-print(f"The sum of all evens is {tota_even}. And the sum of all odds is {total_odd}")
-print("--------------")
+        return "Not an available month"
+# print(check_season(""))
+
+# 6 Write a function called calculate_slope which return the slope of a linear equation
+def calculate_slope(y1, y2, x1, x2):
+    m = (y2 - y1) / (x2 - x1)
+    return m
+
+# 7 Quadratic equation is calculated as follows: ax² + bx + c = 0. Write a function which calculates solution set of a quadratic equation, solve_quadratic_eqn.
+import math
+def solve_quadratic_eqn(a, b, c):
+    x1 = (-b + math.sqrt(b**2 - 4*a*c)) / (2 * a)
+    x2 = (-b - math.sqrt(b**2 - 4*a*c)) / (2 * a)
+    return x1, x2
+
+# 8 Declare a function named print_list. It takes a list as a parameter and it prints out each element of the list.
+def print_list(my_list):
+    for i in my_list:
+        print(i)
+program = ["Java", "Html", "C", "Python"]
+# print_list(program)
+
+# 9 Declare a function named reverse_list. It takes an array as a parameter and it returns the reverse of the array (use loops).
+def reverse_list(my_array):
+    reverse_list_back = []
+    for ii in my_array:
+        reverse_list_back.insert(0, ii)
+    return reverse_list_back
+# print(reverse_list([1, 2, 3, 4, 5]))
+
+# 10 Declare a function named capitalize_list_items. It takes a list as a parameter and it returns a capitalized list of items
+def capitalize_list_items(my_list_items):
+    cap_list = []
+    for i in my_list_items:
+        cap_list.append(i.capitalize())
+    return cap_list
+# print(capitalize_list_items(["hello", "world", "python"]))
+
+# 11 Declare a function named add_item. It takes a list and an item parameters. It returns a list with the item added at the end.
+def add_item(new_list, new_item):
+    new_list.append(new_item)
+    return new_list
+
+food_stuff = ['Potato', 'Tomato', 'Mango', 'Milk']
+print(add_item(food_stuff, 'Meat'))
+
+# 12 Declare a function named remove_item. It takes a list and an item parameters. It returns a list with the item removed from it.
+def remove_item(rem_list, rem_item):
+    rem_list.remove(rem_item)
+    return rem_list
+
+food_stuff = ['Potato', 'Tomato', 'Mango', 'Milk']
+print(remove_item(food_stuff, 'Mango'))
+
+# 13 Declare a function named sum_of_numbers. It takes a number parameter and it adds all the numbers in that range.
+def sum_of_numbers(number):
+    total = 0
+    for i in range(1, number + 1):
+        total += i
+    return total
+print(sum_of_numbers(100))
+
+# 14 Declare a function named sum_of_odds. It takes a number parameter and it adds all the odd numbers in that range.
+def sum_of_odds(n_odd):
+    tot_odd = 0
+    for i in range(1, n_odd + 1):
+        if i % 2 != 0:
+            tot_odd += i
+    return tot_odd
+print(sum_of_odds(10))
+
+# 15 Declare a function named sum_of_even. It takes a number parameter and it adds all the even numbers in that range.
+def sum_of_even(num_even):
+    tot_even = 0
+    for i in range(1, num_even + 1):
+        if i % 2 == 0:
+            tot_even += i # i för att summera
+    return tot_even
+print(sum_of_even(10))
+
+print("-------------------------------------")
+# Exercises: Level 2
+# 1 Declare a function named evens_and_odds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
+def evens_and_odds(interger):
+    even = 0
+    odd = 0
+
+    for i in range(0, interger + 1):
+        if i % 2 == 0:
+            even += 1
+        else:
+            odd += 1
+    return (f"The number of odds are {odd}\nThe number of evens are {even}") # return ska vara under loop aka utanför
+print(evens_and_odds(100))
+
+print("-------------------------------------")
+
+# 2 Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
+def factorial(number):
+    if number < 0:
+        return "Factorial is not defined for negative numbers"
+    return 1 if number <= 1 else number * factorial(number - 1)
+print(factorial(3))
+
+print("-------------------------------------")
+
+# 3 Call your function is_empty, it takes a parameter and it checks if it is empty or not
+def is_empty(para):
+    if para == "":
+        return True
+    else:
+        return False
+print(is_empty("dadaadadadad"))
+
+print("-------------------------------------")
+
+# 4 Write different functions which take lists. They should calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std (standard deviation).
+def calculate_mean(num_mean):
+    sum_mean = sum(num_mean)
+    n_mean = len(num_mean)
+
+    mean = sum_mean / n_mean
+    return mean
+print(calculate_mean([1, 2, 3, 4, 5]))
+
+def calculate_median(num_median):
+    n_len = len(num_median)
+    num_median.sort()
+
+    if n_len % 2 == 0:
+        median1 = num_median[n_len//2] # [index]
+        meidan2 = num_median[n_len//2 - 1]
+        median = (median1 + meidan2) / 2
+    else:
+        median = num_median[n_len//2]
+    return median
+
+print(calculate_median([1, 2, 3, 4, 5]))
+
+def calculate_mode(num_mode):
+    counts = {}
+    for i in num_mode:
+        if i in counts:
+            counts[i] += 1
+        else:
+            counts[i] = 1
+    max_count = max(counts.values())
+
+    mode_values = []
+    for i in counts:
+        if counts[i] == max_count:
+            mode_values.append(i)
+    return mode_values
+
+print(calculate_mode([1, 2, 2, 3, 3, 3]))
+
+def calculate_range(num_range):
+    return max(num_range) - min(num_range)
+print(calculate_range([1, 2, 3, 4, 5]))
+
+def calculate_variance(num_variance, is_sample=True):
+    n = len(num_variance)
+
+def calculate_std():
+    pass
+
+
+print("-------------------------------------")
+
+# 5 Write a function called greet which takes a default argument, name. If no argument is supplied it should print "Hello, Guest!", otherwise it should greet the person by name.
+def greet(name = "Guest"):
+    message = "Hello, " + name + "!"
+    return message
+print(greet("Alice"))
+
+print("-------------------------------------")
+
+# 6 Create a function called show_args to take an arbitrary number of named arguments and print their names and values.
+def show_args(**kwargs): # **kwargs -> dictionary
+    pass
+    # print("Received:", end=" ")
+
+    # for name, value in kwargs.items():
+        # print(f"{name}: {value}", end=" ")
+# (show_args(name="Alice", age=30, city="New York"))
+
+print("-------------------------------------")
 
 # Exercises: Level 3
-# 1 Go to the data folder and use the countries.py file. Loop through the countries and extract all the countries containing the word land.
-countries = [
-    "Afghanistan",
-    "Albania",
-    "Algeria",
-    "Andorra",
-    "Angola",
-    "Antigua and Barbuda",
-    "Argentina",
-    "Armenia",
-    "Australia",
-    "Austria",
-    "Azerbaijan",
-    "Bahamas",
-    "Bahrain",
-    "Bangladesh",
-    "Barbados",
-    "Belarus",
-    "Belgium",
-    "Belize",
-    "Benin",
-    "Bhutan",
-    "Bolivia",
-    "Bosnia and Herzegovina",
-    "Botswana",
-    "Brazil",
-    "Brunei",
-    "Bulgaria",
-    "Burkina Faso",
-    "Burundi",
-    "Cabo Verde",
-    "Cambodia",
-    "Cameroon",
-    "Canada",
-    "Central African Republic",
-    "Chad",
-    "Chile",
-    "China",
-    "Colombia",
-    "Comoros",
-    "Congo, Democratic Republic of the",
-    "Congo, Republic of the",
-    "Costa Rica",
-    "Côte d'Ivoire",
-    "Croatia",
-    "Cuba",
-    "Cyprus",
-    "Czech Republic",
-    "Denmark",
-    "Djibouti",
-    "Dominica",
-    "Dominican Republic",
-    "East Timor (Timor-Leste)",
-    "Ecuador",
-    "Egypt",
-    "El Salvador",
-    "Equatorial Guinea",
-    "Eritrea",
-    "Estonia",
-    "Eswatini",
-    "Ethiopia",
-    "Fiji",
-    "Finland",
-    "France",
-    "Gabon",
-    "Gambia",
-    "Georgia",
-    "Germany",
-    "Ghana",
-    "Greece",
-    "Grenada",
-    "Guatemala",
-    "Guinea",
-    "Guinea-Bissau",
-    "Guyana",
-    "Haiti",
-    "Honduras",
-    "Hungary",
-    "Iceland",
-    "India",
-    "Indonesia",
-    "Iran",
-    "Iraq",
-    "Ireland",
-    "Israel",
-    "Italy",
-    "Jamaica",
-    "Japan",
-    "Jordan",
-    "Kazakhstan",
-    "Kenya",
-    "Kiribati",
-    "Korea, North",
-    "Korea, South",
-    "Kuwait",
-    "Kyrgyzstan",
-    "Laos",
-    "Latvia",
-    "Lebanon",
-    "Lesotho",
-    "Liberia",
-    "Libya",
-    "Liechtenstein",
-    "Lithuania",
-    "Luxembourg",
-    "Madagascar",
-    "Malawi",
-    "Malaysia",
-    "Maldives",
-    "Mali",
-    "Malta",
-    "Marshall Islands",
-    "Mauritania",
-    "Mauritius",
-    "Mexico",
-    "Micronesia",
-    "Moldova",
-    "Monaco",
-    "Mongolia",
-    "Montenegro",
-    "Morocco",
-    "Mozambique",
-    "Myanmar",
-    "Namibia",
-    "Nauru",
-    "Nepal",
-    "Netherlands",
-    "New Zealand",
-    "Nicaragua",
-    "Niger",
-    "Nigeria",
-    "North Macedonia",
-    "Norway",
-    "Oman",
-    "Pakistan",
-    "Palau",
-    "Palestine",
-    "Panama",
-    "Papua New Guinea",
-    "Paraguay",
-    "Peru",
-    "Philippines",
-    "Poland",
-    "Portugal",
-    "Qatar",
-    "Romania",
-    "Russia",
-    "Rwanda",
-    "Saint Kitts and Nevis",
-    "Saint Lucia",
-    "Saint Vincent and the Grenadines",
-    "Samoa",
-    "San Marino",
-    "Sao Tome and Principe",
-    "Saudi Arabia",
-    "Senegal",
-    "Serbia",
-    "Seychelles",
-    "Sierra Leone",
-    "Singapore",
-    "Slovakia",
-    "Slovenia",
-    "Solomon Islands",
-    "Somalia",
-    "South Africa",
-    "South Sudan",
-    "Spain",
-    "Sri Lanka",
-    "Sudan",
-    "Suriname",
-    "Sweden",
-    "Switzerland",
-    "Syria",
-    "Tajikistan",
-    "Tanzania",
-    "Thailand",
-    "Togo",
-    "Tonga",
-    "Trinidad and Tobago",
-    "Tunisia",
-    "Turkey",
-    "Turkmenistan",
-    "Tuvalu",
-    "Uganda",
-    "Ukraine",
-    "United Arab Emirates",
-    "United Kingdom",
-    "United States",
-    "Uruguay",
-    "Uzbekistan",
-    "Vanuatu",
-    "Vatican City",
-    "Venezuela",
-    "Vietnam",
-    "Yemen",
-    "Zambia",
-    "Zimbabwe",
-]
-for land in countries:
-    if "land" in land.lower():
-        print(land)
-print("--------------")
+# 1 Write a function called is_prime, which checks if a number is prime.
+def is_prime(num_prime):
+    if num_prime < 2:
+        return "Not prime number"
+    for i in range(2, num_prime):
+        if num_prime % 2 == 0:
+            return "Not prime number"
+    return "Prime number"
+print(is_prime(10))
 
-# 2 This is a fruit list, ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop.
-fruit_list =  ['banana', 'orange', 'mango', 'lemon']
-fruit_list_back = []
+print("-------------------------------------")
 
-for frt in fruit_list:
-    fruit_list_back.insert(0, frt)
-print(fruit_list_back)
-print("--------------")
+# 2 Write a functions which checks if all items are unique in the list.
+def uniq_list(num_uniq):
+    uq_list = []
+    for i in num_uniq:
+        if i in uq_list:
+            return "Not a unique list"
+        else:
+            uq_list.append(i)
+    return "Unique list"
+print(uniq_list([1, 2, 3, 3]))
 
-# 3 Go to the data folder and use the countries_data.py file.
+print("-------------------------------------")
+
+# 3 Write a function which checks if all the items of the list are of the same data type.
+def same_type_list(num_type_same):
+    first = type(num_type_same[0])
+    for i in num_type_same:
+        if type(i) != first:
+            return "Not same data type"
+    return "Same data type"
+print(same_type_list([1, 2, 3]))
+
+print("-------------------------------------")
+
+# 4 Write a function which check if provided variable is a valid python variable
+def valid_python_variable(valid_variable):
+    return valid_variable.isidentifier()
+print(valid_python_variable("5"))
+
+print("-------------------------------------")
+
 country = [
     {
         "name": "Afghanistan",
@@ -2910,39 +2893,26 @@ country = [
         "currency": "Botswana pula"
     }
 ]
-# What are the total number of languages in the data
-uniq_lang = set()
 
-for county in country:
+# 5 Go to the data folder and access the countries-data.py file.
+# Create a function called the most_spoken_languages in the world. It should return 10 or 20 most spoken languages in the world in descending order
+def most_spoken_languages(country):
+    m_lang = {}
 
-    for langu in county["languages"]:
-        
-        uniq_lang.add(langu)
+    for i in country:
+        for j in i["languages"]:
+            if j in m_lang:
+                m_lang[j] += 1
+            else:
+                m_lang[j] = 1
+    sorte = sorted(m_lang.items(), key=lambda x: x[1], reverse=True)
+    return sorte[:10]
 
-print(len(uniq_lang))
+# Create a function called the most_populated_countries. It should return 10 or 20 most populated countries in descending order.
+def most_populated_countries(country):
+    popu = {}
+    for i in country:
+        popu[i["name"]] = i["population"]
+    sorted_pops = sorted(popu.items(), key=lambda item: item[1], reverse=True)
 
-# Find the ten most spoken languages from the data
-most = {}
-
-# går igenom varje land i listan country, ett i taget.
-for county1 in country:
-    # hämtar listan med språk för det aktuella landet.
-    # går sedan igenom varje språk i det landet.
-    for languu in county1["languages"]:
-        if languu in most:
-            most[languu] +=1
-        else:
-            most[languu] = 1
-sorted_lang = sorted(most.items(), key=lambda x: x[1], reverse=True)
-print(sorted_lang[:10])
-
-# Find the 10 most populated countries in the world
-population = {}
-for popu in country:
-    # dictionary[nyckel] = värde
-    # population["China"] = 1377422166
-    population[popu["name"]] = popu["population"]
-
-sorted_pops = sorted(population.items(), key=lambda item: item[1], reverse=True)
-for name, pop in sorted_pops[:10]:
-    print(f"{name}: {pop}")
+    return sorted_pops[:10]
