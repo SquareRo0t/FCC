@@ -12,7 +12,7 @@ print(counts)
 print('-----------------')
 sort = [(count, word) for word, count in counts.items()]
 s_sorted = sorted(sort, key=lambda x: x[0], reverse=True)
-print(s_sorted[:3])
+print(s_sorted[:10])
 print('-----------------')
 
 # 2 The position of some particles on the horizontal x-axis are -12, -4, -3 and -1 in the negative direction, 0 at origin, 4 and 8 in the positive direction. Extract these numbers from this whole text and find the distance between the two furthest particles.
